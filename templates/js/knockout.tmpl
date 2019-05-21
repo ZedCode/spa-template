@@ -1,0 +1,29 @@
+{{define "knockout"}}
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="static/js/knockout-3.5.0.js"></script>
+<script type="text/javascript">
+  var viewModel = function() {
+    var self = this;
+
+    self.exampleData = {
+      example_title: ko.observable("Click Load Data"),
+      example_description: ko.observable("To make an AJAX request over localhost:8080 to get data to populate the site")
+    }
+
+    self.fetchData = function() {
+      $.ajax({
+        url: "api/v1/example",
+        type: 'get',
+        contentType: 'application/json',
+        dataType: 'json'
+      }).then(function(data) {
+        self.exampleData.example_title(data.example_title);
+        self.exampleData.example_description(data.example_description);
+      })
+    }
+
+  };
+  ko.applyBindings(viewModel);
+</script>
+
+{{end}}

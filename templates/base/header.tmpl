@@ -1,0 +1,56 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SPA TEMPLATE</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="static/js/jquery-3.4.1.min.js"></script>
+  <script src="static/js/popper.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f9f9fa;
+    }
+    .header {
+      font-size: 34px !important;
+      padding: 10px;
+      background-color: #030811;
+      color: white;
+      font-family: "helvetica";
+      border-bottom: 3px solid;
+      border-color: #788290;
+    }
+    .title {
+      font-family: "georgia";
+    }
+  </style>
+</head>
+<body>
+<!-- Header Content -->
+<div class="container-fluid">
+  <div class="header">
+    <div class="row">
+      <div class="col-sm-8">
+        <!-- Example of loading data from Go into the template -->
+        <h2>{{.IndexTitle}}</h2>
+      </div>
+      <div class="col-sm-4">
+        <div class="float-right">
+          <button type="button" class="btn btn-info btn-sm" data-bind="click: fetchData">Get Data</button>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#someData">Button 2</button>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#someData">Button 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-2">
+        <strong data-bind="text: exampleData.example_title"></strong>:
+        <p data-bind="text: exampleData.example_description"></p>
+    </div>
+  </div>
+<!-- Header Content -->
+{{end}}
