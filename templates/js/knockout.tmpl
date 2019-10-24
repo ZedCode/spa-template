@@ -22,6 +22,18 @@
       })
     }
 
+    self.postData = function() {
+      $.ajax({
+        url: "api/v1/examplepost",
+        type: 'POST',
+        data: JSON.stringify({"example_field": "example_value"}),
+        contentType: 'application/json',
+        dataType: 'json'
+      }).then(function(data) {
+        alert(data.example_field)
+      })
+    }
+
   };
   ko.applyBindings(viewModel);
 </script>

@@ -10,3 +10,8 @@ type ExampleContent struct {
 	ExampleTitle       string `json:"example_title"`
 	ExampleDescription string `json:"example_description"`
 }
+
+// ExamplePostData is exported
+type ExamplePostData struct {
+	ExampleField string `json:"example_field"`
+}

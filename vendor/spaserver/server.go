@@ -43,6 +43,7 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 	mx.HandleFunc("/static/{path}/{filename}", staticServer)
 	// Endpoints that are API responses will all be under the api route
 	mx.HandleFunc("/api/v1/example", serveExampleEndpoint(formatter)).Methods("GET")
+	mx.HandleFunc("/api/v1/examplepost", serveExamplePost(formatter)).Methods("POST")
 }
 
 func staticServer(w http.ResponseWriter, r *http.Request) {

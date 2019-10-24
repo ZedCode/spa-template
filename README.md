@@ -16,4 +16,8 @@ The `templates` directory is used by the (Render Library)[https://github.com/unr
 The vendor directory contains the `spaserver` library. This is where you would expand the kind of data you return, the API routes that are available, the methods you can use for each route and so on. There is an example included for both inserting data into the template at execution time (for example, if you want your SPA to be configurable, but not change once the application is up, you would load those things via the template engine). There is also an example for retreiving data over the API route when you press the `get data` button.
 
 ## Building
-You can use the included Makefile to produce a Docker image you can then run and browse to on your local computer.
+You can use the included Makefile to produce a Docker image you can then run and browse to on your local computer. Build and run as:
+```
+$ make linux && make run
+```
+You can then browse to localhost:8080 to interact with the demo.
